@@ -24,9 +24,6 @@ public class Commodity {
     @TableField("`commodity_price`")
     private String commodityPrice;
 
-    @TableField("`commodity_shelf_life`")
-    private String commodityShelfLife;
-
     @TableField("`commodity_status`")
     private String commodityStatus;
 
