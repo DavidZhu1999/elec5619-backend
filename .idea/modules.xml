@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/elec5619-backend.iml" filepath="$PROJECT_DIR$/.idea/elec5619-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/freshshare/freshshare.iml" filepath="$PROJECT_DIR$/freshshare/freshshare.iml" />
+    </modules>
+  </component>
+</project>
