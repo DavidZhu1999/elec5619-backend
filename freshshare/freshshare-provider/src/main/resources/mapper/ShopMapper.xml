@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.freshshare.mapper.PShopMapper">
+
+
+
+    <update id="updateShopStateById" parameterType="com.freshshare.controller.Dto.ShopDto">
+        update business
+        set business_status=#{business_status}
+        where business_id=#{business_id}
+    </update>
+    <update id="updateShopNameById" parameterType="com.freshshare.controller.Dto.ShopDto">
+        update business
+        set business_shopname=#{business_name}
+        where business_id=#{business_id}
+    </update>
+
+</mapper>

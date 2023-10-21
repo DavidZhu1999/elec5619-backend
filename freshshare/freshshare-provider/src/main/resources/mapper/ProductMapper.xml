@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.freshshare.mapper.PProductMapper">
+
+
+
+    <insert id="insertCommodity" parameterType="com.freshshare.controller.Dto.ProductDto">
+        INSERT INTO commodity
+        (
+            commodity_id,
+            business_id,
+            commodity_name,
+            commodity_price,
+
+            commodity_num,
+            commodity_sell_num,
+            commodity_upload_time,
+            commodity_down_time,
+            commodity_edit_time,
+            commodity_status,
+            type_id
+        )
+        VALUES
+            (
+                #{commodity_id},
+                #{business_id},
+                #{commodity_name},
+                #{commodity_price},
+
+                #{commodity_num},
+                #{commodity_sell_num},
+                #{commodity_upload_time},
+                #{commodity_down_time},
+                #{commodity_edit_time},
+                #{commodity_status},
+                #{type_id}
+            )
+    </insert>
+    <update id="updateProduct" parameterType="com.freshshare.controller.Dto.ProductDto">
+        UPDATE commodity
+        SET
+            business_id = #{business_id},
+            commodity_name = #{commodity_name},
+            commodity_price = #{commodity_price},
+            commodity_num = #{commodity_num},
+            commodity_sell_num = #{commodity_sell_num},
+            commodity_upload_time = #{commodity_upload_time},
+            commodity_down_time = #{commodity_down_time},
+            commodity_edit_time = #{commodity_edit_time},
+            commodity_status = #{commodity_status},
+            type_id = #{type_id},
+            commodity_upload_time=#{commodity_upload_time}
+        WHERE
+            commodity_id = #{commodity_id}
+    </update>
+
+    <select id="selectAllActiveCommodities" parameterType="com.freshshare.controller.Dto.ProductDto" >
+        SELECT
+          *
+        FROM
+            commodity
+
+    </select>
+    <update id="deleteProductByCommodityId" parameterType="com.freshshare.controller.Dto.ProductDto">
+        UPDATE commodity
+        SET
+
+            commodity_status = 0
+
+        WHERE
+            commodity_id = #{commodity_id}
+    </update>
+
+
+
+</mapper>
