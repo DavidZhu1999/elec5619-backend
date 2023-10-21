@@ -48,4 +48,9 @@ public class TechController {
         return TechResponse.success(TechResponseEnum.GET_FINISH,techService.getFinish());
     }
 
+    @PostMapping("/getCancel")
+    public TechResponse getCancel(){
+        return TechResponse.success(TechResponseEnum.GET_CANCEL,techService.getCancel());
+    }
+
 }

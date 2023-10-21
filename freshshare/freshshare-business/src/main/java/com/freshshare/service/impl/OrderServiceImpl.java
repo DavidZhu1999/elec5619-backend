@@ -70,7 +70,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
                     .eq(Order::getOrderStatus, "pending")
                     .set(Order::getOrderStatus, "accepted"));
             if (!update) {
-                throw new BusinessException(BusinessExceptionEnum.UPDATE_COMMODITY_ERROR);
+                throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
             }
         } catch (Exception e) {
             throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
@@ -85,7 +85,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
                     .eq(Order::getOrderStatus, "accepted")
                     .set(Order::getOrderStatus, "canceled"));
             if (!update) {
-                throw new BusinessException(BusinessExceptionEnum.UPDATE_COMMODITY_ERROR);
+                throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
             }
         } catch (Exception e) {
             throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
@@ -100,7 +100,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
                     .eq(Order::getOrderStatus, "pending")
                     .set(Order::getOrderStatus, "rejected"));
             if (!update) {
-                throw new BusinessException(BusinessExceptionEnum.UPDATE_COMMODITY_ERROR);
+                throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
             }
         } catch (Exception e) {
             throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
@@ -115,7 +115,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
                     .eq(Order::getOrderStatus, "accepted")
                     .set(Order::getOrderStatus, "completed"));
             if (!update) {
-                throw new BusinessException(BusinessExceptionEnum.UPDATE_COMMODITY_ERROR);
+                throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);
             }
         } catch (Exception e) {
             throw new BusinessException(BusinessExceptionEnum.UPDATE_ORDER_ERROR);

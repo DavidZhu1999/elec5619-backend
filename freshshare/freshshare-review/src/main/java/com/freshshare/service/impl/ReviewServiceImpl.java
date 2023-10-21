@@ -64,12 +64,19 @@ public class ReviewServiceImpl extends ServiceImpl<ReviewMapper, Review> impleme
 
     @Override
     public void addReview(String orderId, String reviewContent, Double reviewScore) {
+        Review oldReview = this.getOne(new LambdaQueryWrapper<Review>()
+                .eq(Review::getOrderId, orderId)
+        );
+        if (oldReview != null) {
+            throw new ReviewException(ReviewExceptionEnum.ADD_REVIEW_ERROR);
+        }
         Review review = new Review();
         review.setOrderId(orderId);
         review.setReviewContent(reviewContent);
         review.setReviewScore(reviewScore);
         try {
             this.save(review);
+            reviewMapper.updateOrderStatus(orderId);
         } catch (Exception e) {
             throw new ReviewException(ReviewExceptionEnum.ADD_REVIEW_ERROR);
         }

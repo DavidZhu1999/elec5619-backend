@@ -8,13 +8,11 @@ import com.freshshare.response.ReviewResponse;
 import com.freshshare.response.ReviewResponseEnum;
 import com.freshshare.service.ReviewService;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/review")
+@CrossOrigin
 public class ReviewController {
 
     @Resource

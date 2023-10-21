@@ -18,4 +18,6 @@ public interface TechService extends IService<Issue> {
     Map<Object,Object> getDealing();
 
     Map<Object,Object> getFinish();
+
+    Map<Object,Object> getCancel();
 }

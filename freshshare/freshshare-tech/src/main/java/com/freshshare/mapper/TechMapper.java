@@ -30,4 +30,11 @@ public interface TechMapper extends BaseMapper<Issue>{
             "JOIN customer c ON i.customer_id = c.customer_id " +
             "WHERE i.issue_status = 'finish'")
     List<Map<String, Object>> selectFinishIssuesWithCustomerInfo();
+
+    @Select("SELECT i.issue_id, i.issue_content,i.issue_status, c.customer_id, c.customer_username, c.customer_email, " +
+            "c.customer_firstname, c.customer_lastname " +
+            "FROM issue i " +
+            "JOIN customer c ON i.customer_id = c.customer_id " +
+            "WHERE i.issue_status = 'cancel'")
+    List<Map<String, Object>> selectCancelIssuesWithCustomerInfo();
 }

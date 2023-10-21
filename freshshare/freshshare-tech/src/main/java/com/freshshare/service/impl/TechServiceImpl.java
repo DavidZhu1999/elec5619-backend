@@ -83,5 +83,14 @@ public class TechServiceImpl extends ServiceImpl<TechMapper, Issue> implements T
         return result;
     }
 
+    @Override
+    public Map<Object, Object> getCancel() {
+        List<Map<String,Object>> customers = techMapper.selectCancelIssuesWithCustomerInfo();
+
+        Map<Object,Object> result = new HashMap<>();
+        result.put("issues",customers);
+        return result;
+    }
+
 
 }

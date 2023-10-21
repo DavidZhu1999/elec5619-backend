@@ -36,9 +36,9 @@ class CustomerServiceImplTest {
     @Test
     void signUp() throws Exception{
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"testUser1\"," //please each test add 1 to the username
+                + "\"customerUsername\":\"test1User\"," //please each test add 1 to the username
                 + "\"customerPassword\":\"testPass\","
-                + "\"customerEmail\":\"test1@example.com\","//please each test add 1 to the email
+                + "\"customerEmail\":\"1test@example.com\","//please each test add 1 to the email
                 + "\"customerAddress\":\"testAddress\","
                 + "\"customerPhone\":\"1234567890\","
                 + "\"customerFirstname\":\"testFirst\","
@@ -83,7 +83,7 @@ class CustomerServiceImplTest {
     @Test
     public void signUp_EmailAlreadyExists_ReturnsCustomError() throws Exception {
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"testUser1\","
+                + "\"customerUsername\":\"testUser1234567890\","
                 + "\"customerPassword\":\"testPass\","
                 + "\"customerEmail\":\"test@example.com\","
                 + "\"customerAddress\":\"testAddress\","
@@ -142,7 +142,7 @@ class CustomerServiceImplTest {
     @Test
     void logIn_UsernameNotExisted_ReturnsCustomError() throws Exception{
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"testUser1\","
+                + "\"customerUsername\":\"testUser\","
                 + "\"customerPassword\":\"testPass\","
                 + "\"rememberMe\":false"
                 + "}";
@@ -160,7 +160,7 @@ class CustomerServiceImplTest {
     @Test
     void logIn_UsernameIsLocked_ReturnsCustomError() throws Exception{
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"admin\","
+                + "\"customerUsername\":\"testlock\","
                 + "\"customerPassword\":\"testPass\","
                 + "\"rememberMe\":false"
                 + "}";

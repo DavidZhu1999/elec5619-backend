@@ -23,7 +23,7 @@ public class OrderController {
         return BusinessResponse.success(BusinessResponseEnum.UPDATE_ORDER_SUCCESS);
     }
 
-        @PostMapping("/cancelOrder")
+    @PostMapping("/cancelOrder")
     public BusinessResponse cancelOrder(@RequestBody CancelOrderRequest cancelOrderRequest){
         orderService.cancelOrder(cancelOrderRequest);
         return BusinessResponse.success(BusinessResponseEnum.UPDATE_ORDER_SUCCESS);

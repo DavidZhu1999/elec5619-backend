@@ -11,7 +11,7 @@ public enum TechResponseEnum implements RespEnum{
     UPDATE_ISSUE_STATUS_SUCCESS(200007, "update issue status successfully"),
     GET_TODO(200008,"get all todo issues" ),
     GET_DEALING(200009,"get dealing issues" ),
-    GET_FINISH(200010,"get finish issues" );
+    GET_FINISH(200010,"get finish issues" ), GET_CANCEL(200010,"get cancel issues" );
 
 
     private String msg;
