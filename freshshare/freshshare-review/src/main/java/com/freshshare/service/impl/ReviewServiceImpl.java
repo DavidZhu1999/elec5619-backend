@@ -47,10 +47,9 @@ public class ReviewServiceImpl extends ServiceImpl<ReviewMapper, Review> impleme
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         List<Review> reviews;
         try {
-            reviews = this.listByIds(orders);
+            reviews = reviewMapper.getReviewsByOrderId(orders);
             if (reviews == null) {
                 throw new ReviewException(ReviewExceptionEnum.GET_ONE_REVIEW_ERROR);
             }

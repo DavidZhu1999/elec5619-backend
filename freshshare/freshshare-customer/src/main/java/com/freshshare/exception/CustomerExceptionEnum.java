@@ -1,7 +1,7 @@
 package com.freshshare.exception;
 
 public enum CustomerExceptionEnum {
-    UPDATE_COMMODITY_ERROR(999999, "update order error");
+    UPDATE_COMMODITY_ERROR(999999, "update order error"), VIEW_SHOP_ERROR(999999,"view shop error" );
 
     private String msg;
 

@@ -3,6 +3,8 @@ package com.freshshare.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.freshshare.entity.Business;
+import com.freshshare.exception.CustomerException;
+import com.freshshare.exception.CustomerExceptionEnum;
 import com.freshshare.mapper.ShopMapper;
 import com.freshshare.request.GetShopAddressRequest;
 import com.freshshare.request.ViewShopItemsRequest;
@@ -49,7 +51,12 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Business> implement
             businessIdList.add(result.getContent().getName().toString());
         }
         Map<String,Object> map = new HashMap<>();
-        List<Business> businessList = this.listByIds(businessIdList);
+        List<Business> businessList = null;
+        try {
+            businessList = this.listByIds(businessIdList);
+        } catch (Exception e) {
+            throw new CustomerException(CustomerExceptionEnum.VIEW_SHOP_ERROR);
+        }
         results.getContent().forEach(geoLocationGeoResult -> {
             System.out.println(geoLocationGeoResult.getContent().getName());
             System.out.println(geoLocationGeoResult.getContent().getPoint());

@@ -11,8 +11,19 @@ import java.util.Map;
 public interface ReviewMapper extends BaseMapper<Review> {
 
 
-    @Select("SELECT `order_id` FROM `order` WHERE `business_id` = #{businessId}")
+    @Select("SELECT `order_id` FROM `transaction` WHERE `business_id` = #{businessId}")
     List<String> getOrdersByBusinessId(String businessId);
+
+    @Select({
+            "<script>",
+            "SELECT * FROM review",
+            "WHERE order_id IN",
+            "<foreach item='orderId' collection='orderIds' open='(' separator=',' close=')'>",
+            "#{orderId}",
+            "</foreach>",
+            "</script>"
+    })
+    List<Review> getReviewsByOrderId(List<String> orderIds);
 
 
     @Update("UPDATE `transaction` SET `order_status` = 'commented' WHERE `order_id` = #{orderId}")
