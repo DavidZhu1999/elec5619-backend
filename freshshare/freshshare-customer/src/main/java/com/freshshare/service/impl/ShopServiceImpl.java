@@ -57,6 +57,11 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Business> implement
         } catch (Exception e) {
             throw new CustomerException(CustomerExceptionEnum.VIEW_SHOP_ERROR);
         }
+        businessList.sort((b1, b2) -> {
+            int index1 = businessIdList.indexOf(b1.getBusinessId().toString());
+            int index2 = businessIdList.indexOf(b2.getBusinessId().toString());
+            return Integer.compare(index1, index2);
+        });
         results.getContent().forEach(geoLocationGeoResult -> {
             System.out.println(geoLocationGeoResult.getContent().getName());
             System.out.println(geoLocationGeoResult.getContent().getPoint());
