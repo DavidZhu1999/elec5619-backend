@@ -33,6 +33,11 @@ google:
     key: AIzaSyB92OzkPjFnH-JXDyTY8oZVgiqiW_iY7Kc
     url: https://maps.googleapis.com/maps/api/geocode/json?address=
 
+gpt:
+  api:
+    key: Bearer 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
+    url: https://api.openai.com/v1/chat/completions
+
 auth:
   keys:
     privateKey: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMJA6gcDW0nfY4OIpcdnSW0CD3xQ1eYVGaR04vsIPUtkwERnZ+b8MIRaQLPkPT3IXferLNLJSnHobBrnWulWhkV9tsuLBiaIdoA/lXhZ0FalB7ETmC0jLv0fZqENCDNzHqWLthYKGemyktFTZQRSy140PJJ2QJNDAkxbG+Pr6RqXAgMBAAECgYBXjM1NeuBOk620z0Y0cKNhy49yLraxG+pyOjJBBQ4nKFIVomtsalZtmIXX7jMB4QglA5PQruNsIl5y47oQN6yM48zPqIefa/PJnK0pvkTA/2yn2BrW93vRrey9HTgLFDWApaUxOHe7efCkDXlS8tUaRkMzl+m6VJa0Q21gfGXSHQJBAMTIpx0b9tRJwtl0IE9qyWx8cjfdW+A6qTia8O4HC93oMha22GPcADWW8zS0ViCeK71Ja46kZIAC12khUoADXAsCQQD8tVgEM5q/pv7JfFsyK1nMXtM5vi35MjnF3cVu+jfuTcvzGj+Jkm2lCp5uCGY5a/MBpJMHO6XoaJEHgrasiYclAkEAniC7IQoSm142ZDULraWa/EE4KyoGpTWeO61OA4fIAmaOsW/2jLABvw5wmp57QzS24yE3e+UgGTmvTXyIZfPNJwJAI8iJ7g5gm0LKUT2KrE/3JzlGL6b+W4sBI0OD8XL8+IGLn6DX3mMdo4EdbfdCgl8GyfTD3QJVO9OStb2MoGHZAQJBAJPyp2MBkA36kK5OYlJA1Zrau6pDbbYdAOW7VZyIM/88nruI2eougPi3t52STUg+V2emprdjZe1usisciA0I2FE=

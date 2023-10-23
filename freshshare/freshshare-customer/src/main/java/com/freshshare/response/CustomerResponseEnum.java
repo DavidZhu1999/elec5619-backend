@@ -9,7 +9,8 @@ public enum CustomerResponseEnum implements RespEnum {
     GET_SHOP_ADDRESS_SUCCESS(100050, "get shop address success"),
     GET_ORDER_ADDRESS_SUCCESS(100060, "get order address success"),
     CANCEL_ORDER_SUCCESS(100070,  "cancel order success"),
-    COMPLETE_ORDER_SUCCESS(100071, "complete order success");
+    COMPLETE_ORDER_SUCCESS(100071, "complete order success"),
+    GPT_SUCCESS(100080, "gpt success");
 
     private String msg;
 
