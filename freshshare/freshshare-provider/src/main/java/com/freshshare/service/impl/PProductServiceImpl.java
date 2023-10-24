@@ -38,9 +38,11 @@ public class PProductServiceImpl implements PProductService {
     }
 
     @Override
-    public   List<Map<String,Object>> selectAllActiveCommodities() {
+    public   List<Map<String,Object>> selectAllActiveCommodities(ProductDto productDto) {
 
-        return PProductMapper.selectAllActiveCommodities();
+
+
+        return PProductMapper.selectAllActiveCommodities(productDto);
     }
 
     @Override

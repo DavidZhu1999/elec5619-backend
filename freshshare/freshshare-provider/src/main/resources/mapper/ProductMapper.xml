@@ -32,7 +32,7 @@
                 #{commodity_upload_time},
                 #{commodity_down_time},
                 #{commodity_edit_time},
-                #{commodity_status},
+                1,
                 #{type_id}
             )
     </insert>
@@ -59,6 +59,7 @@
           *
         FROM
             commodity
+        where business_id=#{business_id} and  commodity_status =1
 
     </select>
     <update id="deleteProductByCommodityId" parameterType="com.freshshare.controller.Dto.ProductDto">

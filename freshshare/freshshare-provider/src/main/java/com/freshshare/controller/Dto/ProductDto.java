@@ -14,7 +14,7 @@ public class ProductDto {
     @TableField("`commodity_id`")
     private String commodity_id;
     @TableField("`business_id`")
-    private String business_id;
+    private String business_id;//根据business_id来查找商品
     @TableField("`commodity_name`")
     private String commodity_name;
     @TableField("`commodity_price`")
