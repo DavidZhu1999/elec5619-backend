@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-business/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-customer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-manage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-review/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/freshshare-tech/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freshshare/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

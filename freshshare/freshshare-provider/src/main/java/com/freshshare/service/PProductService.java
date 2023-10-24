@@ -9,7 +9,7 @@ public interface PProductService {
     Integer insertCommodity(ProductDto productDto);
 
  //   @Select("SELECT * from `commodity`")
- List<Map<String,Object>> selectAllActiveCommodities();
+ List<Map<String,Object>> selectAllActiveCommodities(ProductDto productDto);
 
     Integer updateProduct(ProductDto productDto);
 

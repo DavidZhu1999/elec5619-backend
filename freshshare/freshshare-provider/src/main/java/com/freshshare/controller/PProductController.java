@@ -42,10 +42,12 @@ public class PProductController {
 
     @RequestMapping(value = "/getAll", method = RequestMethod.POST)//注意我只搜状态为1  也就是上架的商品
     @ResponseBody
-    public ResponseObj getAllProduct(@RequestBody ProductReq productReq){
+    public ResponseObj getAllProduct(@RequestBody ProductReq productReq){//
         ResponseObj responseObj = new ResponseObj();
-
-        List<Map<String,Object>> tmp= PProductService.selectAllActiveCommodities();
+        String businessId=StpBusinessUtil.getLoginIdByToken(productReq.getSatokenBusiness()).toString();
+        ProductDto productDto = new ProductDto();
+        productDto.setBusiness_id(businessId);
+        List<Map<String,Object>> tmp= PProductService.selectAllActiveCommodities(productDto);
 
         responseObj.setCode(200);
         responseObj.setMsg("get all product successfully ");

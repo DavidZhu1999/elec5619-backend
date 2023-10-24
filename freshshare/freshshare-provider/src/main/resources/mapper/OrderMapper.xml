@@ -25,7 +25,7 @@
         UPDATE  transaction
         SET
 
-            order_status = 'pending'
+            order_status = 'accepted'
 
         WHERE
             order_id = #{order_id}
