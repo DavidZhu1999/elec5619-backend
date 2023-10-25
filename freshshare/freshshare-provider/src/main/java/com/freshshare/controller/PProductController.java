@@ -40,7 +40,7 @@ public class PProductController {
 
     }
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.POST)//注意我只搜状态为selling  也就是上架的商品
+    @RequestMapping(value = "/getAll", method = RequestMethod.POST)//Notice that I'm only searching for items that are selling
     @ResponseBody
     public ResponseObj getAllProduct(@RequestBody ProductReq productReq){//
         ResponseObj responseObj = new ResponseObj();
@@ -65,9 +65,8 @@ public class PProductController {
         ResponseObj responseObj = new ResponseObj();
         ProductDto productDto = new ProductDto();
 
-        //todo
-        //要不要判断有没有权力修改这个商品 暂时先不写了
-        BeanUtils.copyProperties(productReq,productDto);//把入参和目标参数里面的相同属性复制
+
+        BeanUtils.copyProperties(productReq,productDto);//Copy the same properties in the input and target parameters
         String businessId=StpBusinessUtil.getLoginIdByToken(productReq.getSatokenBusiness()).toString();
         productDto.setBusiness_id(businessId);
         Integer tmp= PProductService.updateProduct(productDto);
@@ -88,9 +87,7 @@ public class PProductController {
         ResponseObj responseObj = new ResponseObj();
         ProductDto productDto = new ProductDto();
 
-        //todo
-        //要不要判断有没有权力修改这个商品 暂时先不写了
-        BeanUtils.copyProperties(productReq,productDto);//把入参和目标参数里面的相同属性复制
+        BeanUtils.copyProperties(productReq,productDto);//Copy the same properties in the input and target parameters
 //        String businessId=StpBusinessUtil.getLoginIdByToken(productReq.getSatokenBusiness()).toString();
 //        productDto.setBusiness_id(businessId);
         Integer tmp= PProductService.deleteProductByCommodityId(productDto);

@@ -82,7 +82,7 @@ public class PProfileController {
 
     @ResponseBody
     @PostMapping("/chat")
-    public GptResponse chat(@RequestBody GptResponse gptResponse) {//输入一句话
+    public GptResponse chat(@RequestBody GptResponse gptResponse) {//
         // create a request
 
 
