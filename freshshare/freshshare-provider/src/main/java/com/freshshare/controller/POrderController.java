@@ -51,10 +51,11 @@ public class POrderController {
         ResponseObj responseObj = new ResponseObj();
         OrderDto orderDto = new OrderDto();
 //返回customer和provider的name
-
+orderDto.setBusiness_id(orderReq.getBusiness_id());
         //左连接呗
 
-        List<Map<String,Object>> tmp= POrderService.selectAllOrder();
+
+        List<Map<String,Object>> tmp= POrderService.selectAllOrder(orderDto);
 
         responseObj.setCode(200);
         responseObj.setMsg("update order successfully ");
