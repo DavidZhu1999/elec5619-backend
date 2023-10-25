@@ -18,7 +18,7 @@ public class TechController {
 
     @PostMapping("/addIssue")
     public TechResponse addIssue(@RequestBody AddIssueRequestParam param){
-        techService.addIssue(param.getOrderId(),param.getIssueContent());
+        techService.addIssue(param.getOrderId(),param.getIssueContent(), param.getCustomerId());
         return TechResponse.success(TechResponseEnum.ADD_TECH);
     }
 
@@ -29,7 +29,7 @@ public class TechController {
 
     @PostMapping("/updateIssueStatus")
     public TechResponse updateIssueStatus(@RequestBody UpdateIssueStatusRequestParam param){
-        techService.updateIssue(param.getIssueId(),param.getIssueStatus());
+        techService.updateIssue(param.getIssueId(),param.getIssueStatus(),param.getStaffId());
         return TechResponse.success(TechResponseEnum.UPDATE_ISSUE_STATUS_SUCCESS);
     }
 
