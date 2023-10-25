@@ -40,7 +40,7 @@ public class PProductController {
 
     }
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.POST)//注意我只搜状态为1  也就是上架的商品
+    @RequestMapping(value = "/getAll", method = RequestMethod.POST)//注意我只搜状态为selling  也就是上架的商品
     @ResponseBody
     public ResponseObj getAllProduct(@RequestBody ProductReq productReq){//
         ResponseObj responseObj = new ResponseObj();

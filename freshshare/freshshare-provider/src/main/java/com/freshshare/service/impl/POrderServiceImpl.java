@@ -31,8 +31,8 @@ public class POrderServiceImpl implements POrderService {
     }
 
     @Override
-    public  List<Map<String,Object>> selectAllOrder() {
-        return POrderMapper.selectAllOrder();
+    public  List<Map<String,Object>> selectAllOrder(OrderDto orderDto) {
+        return POrderMapper.selectAllOrder(orderDto);
     }
 
     @Override

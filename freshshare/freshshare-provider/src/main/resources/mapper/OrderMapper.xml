@@ -40,28 +40,31 @@
     </select>
     <select id="selectAllOrder" parameterType="com.freshshare.controller.Dto.OrderDto">
 
-
-        SELECT
-            transaction.order_id,
-            transaction.customer_id,
-            transaction.order_price,
-            transaction.order_create_time,
-            transaction.order_end_time,
-            transaction.order_edit_time,
-            transaction.order_status,
-            transaction.business_id,
-            review.review_context,
-            review.review_star,
-            business.business_username,  -- 新添加的字段，表示从business表中获取的商家用户名
-            customer.customer_username  -- 新添加的字段，表示从customer表中获取的客户用户名
+        SELECT *
         FROM
-            transaction
-                LEFT JOIN review
-                          ON transaction.order_id = review.order_id
-                LEFT JOIN business  -- 左连接business表
-                          ON transaction.business_id = business.business_id
-                LEFT JOIN customer  -- 左连接customer表
-                          ON transaction.customer_id = customer.customer_id;
+            (SELECT
+                 transaction.order_id,
+                 transaction.customer_id,
+                 transaction.order_price,
+                 transaction.order_create_time,
+                 transaction.order_end_time,
+                 transaction.order_edit_time,
+                 transaction.order_status,
+                 transaction.business_id,
+                 review.review_content,
+                 review.review_score,
+                 business.business_username AS business_username,  -- 新添加的字段，表示从business表中获取的商家用户名
+                 customer.customer_username AS customer_username  -- 新添加的字段，表示从customer表中获取的客户用户名
+             FROM
+                 transaction
+                     LEFT JOIN review
+                               ON transaction.order_id = review.order_id
+                     LEFT JOIN business  -- 左连接business表
+                               ON transaction.business_id = business.business_id
+                     LEFT JOIN customer  -- 左连接customer表
+                               ON transaction.customer_id = customer.customer_id
+            ) AS subquery  -- 这里是子查询的别名
+        WHERE subquery.business_id=#{business_id}
 
 
 
