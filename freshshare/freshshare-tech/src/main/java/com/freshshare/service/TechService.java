@@ -7,11 +7,11 @@ import java.util.Map;
 
 public interface TechService extends IService<Issue> {
 
-    void addIssue(String orderId, String issueContent);
+    void addIssue(String orderId, String issueContent, String customerId);
 
     Map<Object,Object> getAllIssues();
 
-    void updateIssue(String issueId, String issueStatus);
+    void updateIssue(String issueId, String issueStatus, String staffId);
 
     Map<Object,Object> getTodo();
 

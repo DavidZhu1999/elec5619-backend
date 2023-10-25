@@ -23,12 +23,13 @@ public class TechServiceImpl extends ServiceImpl<TechMapper, Issue> implements T
     TechMapper techMapper;
 
     @Override
-    public void addIssue(String orderId, String issueContent) {
+    public void addIssue(String orderId, String issueContent, String customerId) {
         Issue newIssue = new Issue();
         newIssue.setOrderId(orderId);
         newIssue.setIssueContent(issueContent);
         newIssue.setIssueCreateTime(LocalDateTime.now());
-        newIssue.setIssueStatus("created");
+        newIssue.setCustomerId(customerId);
+        newIssue.setIssueStatus("pending");
 
         try {
             this.save(newIssue);
@@ -46,8 +47,14 @@ public class TechServiceImpl extends ServiceImpl<TechMapper, Issue> implements T
     }
 
     @Override
-    public void updateIssue(String issueId, String issueStatus) {
+    public void updateIssue(String issueId, String issueStatus, String staffId) {
         Issue issue = this.getById(issueId);
+        if (staffId != null) {
+            issue.setStaffId(staffId);
+        }
+        if (issueStatus.equals("finished")) {
+            issue.setIssueEndTime(LocalDateTime.now());
+        }
         issue.setIssueStatus(issueStatus);
         try {
             this.updateById(issue);

@@ -50,8 +50,8 @@
             transaction.order_edit_time,
             transaction.order_status,
             transaction.business_id,
-            review.review_context,
-            review.review_star,
+            review.review_content,
+            review.review_score,
             business.business_username,  -- 新添加的字段，表示从business表中获取的商家用户名
             customer.customer_username  -- 新添加的字段，表示从customer表中获取的客户用户名
         FROM
