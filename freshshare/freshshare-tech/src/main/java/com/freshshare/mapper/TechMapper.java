@@ -28,7 +28,7 @@ public interface TechMapper extends BaseMapper<Issue>{
             "c.customer_firstname, c.customer_lastname " +
             "FROM issue i " +
             "JOIN customer c ON i.customer_id = c.customer_id " +
-            "WHERE i.issue_status = 'finish'")
+            "WHERE i.issue_status = 'finished'")
     List<Map<String, Object>> selectFinishIssuesWithCustomerInfo();
 
     @Select("SELECT i.issue_id, i.issue_content,i.issue_status, c.customer_id, c.customer_username, c.customer_email, " +
