@@ -8,4 +8,6 @@ public class AddIssueRequestParam {
     private String orderId;
 
     private String issueContent;
+
+    private String customerId;
 }
