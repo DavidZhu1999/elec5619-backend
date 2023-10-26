@@ -50,9 +50,9 @@ public class POrderController {
     public ResponseObj getAllOrder(@RequestBody OrderReq orderReq){
         ResponseObj responseObj = new ResponseObj();
         OrderDto orderDto = new OrderDto();
-//返回customer和provider的name
+//Return the name of the customer and provider
 orderDto.setBusiness_id(orderReq.getBusiness_id());
-        //左连接呗
+        //left join
 
 
         List<Map<String,Object>> tmp= POrderService.selectAllOrder(orderDto);

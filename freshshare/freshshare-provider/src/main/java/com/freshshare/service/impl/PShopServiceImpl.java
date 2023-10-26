@@ -17,7 +17,7 @@ public class PShopServiceImpl implements PShopService {
     public Integer updateShopStateById(ShopDto shopDto) {
 
 
-        return PShopMapper.updateShopStateById(shopDto);//返回成功更新的数字
+        return PShopMapper.updateShopStateById(shopDto);//Returns the number of successful updates
 
     }
     @Override

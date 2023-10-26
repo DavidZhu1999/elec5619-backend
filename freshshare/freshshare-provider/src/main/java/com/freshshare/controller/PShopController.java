@@ -23,8 +23,8 @@ public class PShopController {
         ResponseObj responseObj = new ResponseObj();
 
         ShopDto shopDto = new ShopDto();
-        BeanUtils.copyProperties(shopReq,shopDto);//把入参和目标参数里面的相同属性复制
-        //根据token分析出bussiness id
+        BeanUtils.copyProperties(shopReq,shopDto);//Copy the same properties in the input and target parameters
+        //Analyze the bussiness id based on the token
         String businessId= StpBusinessUtil.getLoginIdByToken(shopReq.getSatokenBusiness()).toString();
         shopDto.setBusiness_id(businessId);
         Integer tmp= PShopService.updateShopStateById(shopDto);
