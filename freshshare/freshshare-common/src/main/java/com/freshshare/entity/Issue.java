@@ -8,6 +8,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * This is the entity for issue
+ */
 @Data
 @TableName("`issue`")
 public class Issue {

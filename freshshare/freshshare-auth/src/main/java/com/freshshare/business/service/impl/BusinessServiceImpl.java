@@ -28,27 +28,33 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.*;
 
-
+/**
+ * This is the service implementation for business auth
+ */
 @Slf4j
 @Service
 public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> implements BusinessService {
 
     @Value("${google.api.key}")
-    private String API_KEY;
+    private String API_KEY; // google api key
 
     @Value("${google.api.url}")
-    private String BASE_URL;
+    private String BASE_URL; // google api url
 
     @Value("${auth.keys.privateKey}")
-    private String privateKey;
+    private String privateKey; // private key
 
     @Value("${auth.keys.publicKey}")
-    private String publicKey;
+    private String publicKey; // public key
 
     @Resource
     private RedisTemplate<String,Object> redisTemplate;
 
 
+    /**
+     * This is the sign up method for business
+     * @param param
+     */
     @Override
     public void signUp(BusinessSignUpRequestParam param) {
         Business business = this.getOne(new LambdaQueryWrapper<Business>()
@@ -139,6 +145,11 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
         }
     }
 
+    /**
+     * This is the log in method for business
+     * @param param
+     * @return result map
+     */
     @Override
     public Map<Object,Object> logIn(BusinessLogInRequestParam param) {
         Business business = this.getOne(new LambdaQueryWrapper<Business>()
@@ -170,6 +181,9 @@ public class BusinessServiceImpl extends ServiceImpl<BusinessMapper, Business> i
 
     }
 
+    /**
+     * This is the log out method for business
+     */
     @Override
     public void logOut() {
         try {

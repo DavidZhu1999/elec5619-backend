@@ -21,6 +21,9 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This is the service implementation for staff
+ */
 @Slf4j
 @Service
 public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements StaffService {

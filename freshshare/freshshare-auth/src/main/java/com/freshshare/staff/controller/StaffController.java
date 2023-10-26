@@ -9,6 +9,9 @@ import com.freshshare.staff.service.StaffService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * This is the controller for staff
+ */
 @RestController
 @RequestMapping("/auth/staff")
 @CrossOrigin
@@ -17,6 +20,11 @@ public class StaffController {
     @Resource
     private StaffService staffService;
 
+    /**
+     * this is signup method for staff
+     * @param param
+     * @return
+     */
     @PostMapping("/signUp")
     public StaffResponse signUp(@RequestBody StaffSignUpRequestParam param){
         staffService.signUp(param);

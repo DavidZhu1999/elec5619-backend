@@ -31,11 +31,6 @@
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>freshshare-business</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
             <artifactId>freshshare-tech</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

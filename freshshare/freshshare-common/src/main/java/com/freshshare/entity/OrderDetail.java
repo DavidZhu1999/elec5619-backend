@@ -6,6 +6,9 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+/**
+ * This is the entity for order detail
+ */
 @Data
 @TableName("`order_detail`")
 public class OrderDetail {

@@ -10,14 +10,22 @@ import com.freshshare.business.service.ManageBusinessService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @description: ManageBusinessController
+ */
 @RestController
 @RequestMapping("/staff/manager/business")
 @CrossOrigin
 public class ManageBusinessController {
 
+
     @Resource
     ManageBusinessService manageBusinessService;
 
+    /**
+     * get all businesses
+     * @return
+     */
     @SaCheckRole(type = "staff",value = {"manager"})
     @PostMapping("/getAllBusinesses")
     public ManageBusinessResponse getAllBusinesses(){
@@ -25,6 +33,12 @@ public class ManageBusinessController {
                 manageBusinessService.getAllBusinesses());
     }
 
+
+    /**
+     * get one business detail
+     * @param param
+     * @return
+     */
     @SaCheckRole(type = "staff",value = {"manager"})
     @PostMapping("/getOneBusiness")
     public ManageBusinessResponse getOneBusiness(@RequestBody getOneBusinessRequestParam param){
@@ -32,6 +46,11 @@ public class ManageBusinessController {
                 manageBusinessService.getOneBusiness(param.getBusinessId()));
     }
 
+    /**
+     * get searched businesses
+     * @param param
+     * @return
+     */
     @SaCheckRole(type = "staff",value = {"manager"})
     @PostMapping("/getSearchedBusinesses")
     public ManageBusinessResponse getSearchedBusinesses(@RequestBody getSearchedBusinessesRequestParam param){
@@ -39,6 +58,11 @@ public class ManageBusinessController {
                 manageBusinessService.getSearchedBusinesses(param.getBusinessShopname()));
     }
 
+    /**
+     * update business status
+     * @param param
+     * @return
+     */
     @SaCheckRole(type = "staff",value = {"manager"})
     @PostMapping("/updateBusinessStatus")
     public ManageBusinessResponse updateBusinessStatus(@RequestBody updateBusinessStatusRequestParam param){

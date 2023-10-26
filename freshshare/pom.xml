@@ -21,7 +21,6 @@
         <module>freshshare-auth</module>
         <module>freshshare-manage</module>
         <module>freshshare-customer</module>
-        <module>freshshare-business</module>
         <module>freshshare-review</module>
         <module>freshshare-tech</module>
         <module>freshshare-provider</module>

@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * This is the entity for geocode, no use
+ */
 @Data
 public class Geocode {
 

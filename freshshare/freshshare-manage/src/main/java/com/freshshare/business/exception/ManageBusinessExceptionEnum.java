@@ -1,5 +1,8 @@
 package com.freshshare.business.exception;
 
+/**
+ * @description: ManageBusinessExceptionEnum
+ */
 public enum ManageBusinessExceptionEnum {
     GET_ONE_BUSINESS_ERROR(1000011, "get one business error"),
     UPDATE_BUSINESS_STATUS_ERROR_NOTEXIST(1000021, "update business status error, businessId not exist"),

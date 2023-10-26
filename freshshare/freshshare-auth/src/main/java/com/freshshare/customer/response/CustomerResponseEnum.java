@@ -2,6 +2,9 @@ package com.freshshare.customer.response;
 
 import com.freshshare.response.RespEnum;
 
+/**
+ * This is the response for customer
+ */
 public enum CustomerResponseEnum implements RespEnum {
     SIGNUP_SUCCESS(100000, "Sign up successfully"),
 

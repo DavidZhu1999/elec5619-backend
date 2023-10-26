@@ -19,6 +19,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @description: CustomerOrderServiceImpl
+ */
 @Service
 public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, Order> implements CustomerOrderService {
 
@@ -28,6 +31,11 @@ public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, O
     @Resource
     private CustomerOrderDetailService customerOrderDetailService;
 
+    /**
+     * add order
+     * @param addOrderRequest
+     * @return
+     */
     @Override
     public String addOrder(AddOrderRequest addOrderRequest) {
         Order newOrder = new Order();
@@ -54,6 +62,11 @@ public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, O
         return newOrder.getOrderId();
     }
 
+    /**
+     * get all orders
+     * @param getAllOrdersRequest
+     * @return
+     */
     @Override
     public Map<Object, Object> getOrders(GetAllOrdersRequest getAllOrdersRequest) {
 //        List<Map<String,Object>> orders = this.listMaps(new LambdaQueryWrapper<Order>()
@@ -66,6 +79,11 @@ public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, O
         return result;
     }
 
+    /**
+     * get order detail
+     * @param getOrderDetailRequest
+     * @return
+     */
     @Override
     public Map<Object, Object> getOrderDetail(GetOrderDetailRequest getOrderDetailRequest) {
         Map<String,Object> orderDetail = customerOrderMapper.selectOrderDetailWithCustomerAndBusinessInfo(getOrderDetailRequest.getOrderId());
@@ -77,6 +95,11 @@ public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, O
         return result;
     }
 
+    /**
+     * get order address
+     * @param orderId
+     * @return
+     */
     @Override
     public Map<Object, Object> getOrderAddress(String orderId) {
         Map<String,Object> bussinessId = this.getMap(new LambdaQueryWrapper<Order>()
@@ -90,6 +113,10 @@ public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, O
         return result;
     }
 
+    /**
+     * cancel order
+     * @param cancelOrderRequest
+     */
     @Override
     public void cancelOrder(CancelOrderRequest cancelOrderRequest) {
         try {
@@ -105,6 +132,10 @@ public class CustomerOrderServiceImpl extends ServiceImpl<CustomerOrderMapper, O
         }
     }
 
+    /**
+     * complete order
+     * @param completeOrderRequest
+     */
     @Override
     public void completeOrder(CompleteOrderRequest completeOrderRequest) {
         try {

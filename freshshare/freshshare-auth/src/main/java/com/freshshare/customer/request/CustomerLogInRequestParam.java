@@ -2,6 +2,9 @@ package com.freshshare.customer.request;
 
 import lombok.Data;
 
+/**
+ * This is the request param for customer log in
+ */
 @Data
 public class CustomerLogInRequestParam {
 

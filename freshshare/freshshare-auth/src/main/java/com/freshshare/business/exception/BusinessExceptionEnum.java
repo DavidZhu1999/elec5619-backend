@@ -1,5 +1,8 @@
 package com.freshshare.business.exception;
 
+/**
+ * This is the exception enum for business auth
+ */
 public enum BusinessExceptionEnum {
 
     SIGN_UP_EXIST_USERNAME(100001, "Username already exists"),

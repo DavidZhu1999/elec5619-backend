@@ -2,6 +2,9 @@ package com.freshshare.business.exception;
 
 import com.freshshare.exception.BaseException;
 
+/**
+ * @description: ManageBusinessException
+ */
 public class ManageBusinessException extends BaseException {
 
     private String msg;

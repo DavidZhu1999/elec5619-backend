@@ -21,6 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @description: ShopServiceImpl
+ */
 @Service
 public class ShopServiceImpl extends ServiceImpl<ShopMapper, Business> implements ShopService {
 
@@ -30,6 +33,11 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Business> implement
     @Resource
     private ShopMapper shopMapper;
 
+    /**
+     * view shops
+     * @param viewShopsRequest
+     * @return
+     */
     @Override
     public Map<Object, Object> viewShops(ViewShopsRequest viewShopsRequest) {
         Point point = new Point(viewShopsRequest.getLongitude(), viewShopsRequest.getLatitude());

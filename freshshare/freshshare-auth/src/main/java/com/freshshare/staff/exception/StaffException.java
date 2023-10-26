@@ -2,6 +2,9 @@ package com.freshshare.staff.exception;
 
 import com.freshshare.exception.BaseException;
 
+/**
+ * This is the exception for staff
+ */
 public class StaffException extends BaseException {
     private String msg;
 

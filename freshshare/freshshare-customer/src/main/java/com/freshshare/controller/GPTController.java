@@ -17,6 +17,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * @description: GPTController
+ */
 @RestController
 @RequestMapping("/gpt")
 @CrossOrigin
@@ -28,6 +31,11 @@ public class GPTController {
     @Value("${gpt.api.url}")
     private String gptApiUrl;
 
+    /**
+     * get result
+     * @param gptRequest
+     * @return
+     */
     @PostMapping("/getResult")
     public CustomerResponse gpt(@RequestBody GPTRequest gptRequest){
         String backgroundMessage = "{\"role\":\"system\", \"content\":\"" + "Now I have some ingredients, please tell me how to process them and give me some recipes " + "\"}";

@@ -2,6 +2,9 @@ package com.freshshare.staff.response;
 
 import com.freshshare.response.ResponseObj;
 
+/**
+ * This is the response for staff
+ */
 public class StaffResponse extends ResponseObj {
 
     public StaffResponse(StaffResponseEnum staffResponseEnum){

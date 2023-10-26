@@ -7,6 +7,9 @@ import com.freshshare.entity.Business;
 
 import java.util.Map;
 
+/**
+ * This is the service for business auth
+ */
 public interface BusinessService extends IService<Business> {
 
     public void signUp(BusinessSignUpRequestParam param);

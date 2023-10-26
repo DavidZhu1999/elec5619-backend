@@ -1,5 +1,8 @@
 package com.freshshare.staff.exception;
 
+/**
+ * This is the exception enum for staff
+ */
 public enum StaffExceptionEnum {
 
     SIGN_UP_EXIST_USERNAME(100001, "Username already exists"),

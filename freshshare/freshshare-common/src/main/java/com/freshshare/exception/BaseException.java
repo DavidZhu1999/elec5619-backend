@@ -1,5 +1,8 @@
 package com.freshshare.exception;
 
+/**
+ * This is the base exception extend runtime exception, if the exception is type of base exception, it will be caught by global exception handler
+ */
 public class BaseException extends RuntimeException{
 
     private int code;

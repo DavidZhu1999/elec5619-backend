@@ -2,6 +2,9 @@ package com.freshshare.staff.response;
 
 import com.freshshare.response.RespEnum;
 
+/**
+ * This is the response enum for staff
+ */
 public enum StaffResponseEnum implements RespEnum {
     SIGNUP_SUCCESS(100000, "Sign up successfully"),
 

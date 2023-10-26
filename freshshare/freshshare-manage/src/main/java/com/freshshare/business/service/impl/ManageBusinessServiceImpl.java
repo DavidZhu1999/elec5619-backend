@@ -19,12 +19,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @description: ManageBusinessServiceImpl
+ */
 @Service
 public class ManageBusinessServiceImpl extends ServiceImpl<ManageBusinessMapper, Business> implements ManageBusinessService {
 
     @Resource
     ManageBusinessMapper manageBusinessMapper;
 
+    /**
+     * get all businesses
+     * @return
+     */
     @Override
     public Map<Object,Object> getAllBusinesses() {
         List<Map<String,Object>> businesses = this.listMaps(new LambdaQueryWrapper<Business>()
@@ -36,6 +43,11 @@ public class ManageBusinessServiceImpl extends ServiceImpl<ManageBusinessMapper,
         return returnResult;
     }
 
+    /**
+     * get one business detail
+     * @param businessId
+     * @return
+     */
     @Override
     public Map<Object, Object> getOneBusiness(String businessId) {
         Map<String, Object> business = this.getMap(new LambdaQueryWrapper<Business>()
@@ -50,6 +62,11 @@ public class ManageBusinessServiceImpl extends ServiceImpl<ManageBusinessMapper,
         return returnResult;
     }
 
+    /**
+     * get searched businesses
+     * @param businessShopname
+     * @return
+     */
     @Override
     public Map<Object, Object> getSearchedBusinesses(String businessShopname) {
         List<Map<String,Object>> businesses = this.listMaps(new LambdaQueryWrapper<Business>()
@@ -62,6 +79,11 @@ public class ManageBusinessServiceImpl extends ServiceImpl<ManageBusinessMapper,
         return returnResult;
     }
 
+    /**
+     * update business status
+     * @param businessId
+     * @param businessStatus
+     */
     @Override
     public void updateBusinessStatus(String businessId, String businessStatus) {
         Business business = this.getOne(new LambdaQueryWrapper<Business>()

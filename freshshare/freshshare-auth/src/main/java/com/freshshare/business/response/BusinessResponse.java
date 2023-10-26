@@ -2,6 +2,9 @@ package com.freshshare.business.response;
 
 import com.freshshare.response.ResponseObj;
 
+/**
+ * This is the response for business auth
+ */
 public class BusinessResponse extends ResponseObj {
 
     public BusinessResponse(BusinessResponseEnum businessResponseEnum) {

@@ -2,6 +2,9 @@ package com.freshshare.customer.response;
 
 import com.freshshare.response.ResponseObj;
 
+/**
+ * This is the response for customer
+ */
 public class CustomerResponse extends ResponseObj {
 
     public CustomerResponse(CustomerResponseEnum customerResponseEnum){

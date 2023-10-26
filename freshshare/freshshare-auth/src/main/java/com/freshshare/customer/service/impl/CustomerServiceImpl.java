@@ -26,22 +26,29 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This is the service implementation for customer auth
+ */
 @Slf4j
 @Service
 public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> implements CustomerService {
 
     @Value("${google.api.key}")
-    private String API_KEY;
+    private String API_KEY; // google api key
 
     @Value("${google.api.url}")
-    private String BASE_URL;
+    private String BASE_URL; // google api url
 
     @Value("${auth.keys.privateKey}")
-    private String privateKey;
+    private String privateKey; // private key
 
     @Value("${auth.keys.publicKey}")
-    private String publicKey;
+    private String publicKey; // public key
 
+    /**
+     * this is signup method for customer
+     * @param param
+     */
     @Override
     @Transactional
     public void signUp(CustomerSignUpRequestParam param) {
@@ -107,6 +114,11 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
         }
     }
 
+    /**
+     * this is login method for customer
+     * @param param
+     * @return
+     */
     @Override
     public Map<Object,Object> logIn(CustomerLogInRequestParam param) {
         Customer customer = this.getOne(new LambdaQueryWrapper<Customer>()
@@ -142,6 +154,9 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
         return returnMap;
     }
 
+    /**
+     * this is logout method for customer
+     */
     @Override
     public void logOut() {
         try {
