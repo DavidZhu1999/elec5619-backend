@@ -21,7 +21,7 @@ public class POrderController {
     private POrderService POrderService;
     @RequestMapping(value = "/accept", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseObj addOrder(@RequestBody OrderReq orderReq){
+    public ResponseObj acceptOrder(@RequestBody OrderReq orderReq){
         ResponseObj responseObj = new ResponseObj();
         OrderDto orderDto = new OrderDto();
         BeanUtils.copyProperties(orderReq,orderDto);//把入参和目标参数里面的相同属性复制
