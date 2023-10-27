@@ -27,12 +27,6 @@ public class POrderController {
         BeanUtils.copyProperties(orderReq,orderDto);//把入参和目标参数里面的相同属性复制
 
 
-//        String customerId=StpBusinessUtil.getLoginIdByToken(orderReq.getSatokenCustomer()).toString();
-//        orderDto.setCustomer_id(customerId);
-
-
-
-
         Integer tmp= POrderService.acceptOrder(orderDto);
         if(tmp==404){
             responseObj.setCode(40404);
