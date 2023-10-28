@@ -34,11 +34,36 @@ class CustomerServiceImplTest {
     }
 
     @Test
+    void signUp_MultipleUsers() throws Exception {
+        for (int i = 1; i <= 100; i++) {
+            String jsonRequestBody = "{"
+                    + "\"customerUsername\":\"test" + i + "\","
+                    + "\"customerPassword\":\"123456\","
+                    + "\"customerEmail\":\"test" + i + "@gmail.com\","
+                    + "\"customerAddress\":\"testAddress\","
+                    + "\"customerPhone\":\"1234567890\","
+                    + "\"customerFirstname\":\"test\","
+                    + "\"customerLastname\":\"" + i + "\","
+                    + "\"customerPostcode\":\"2000\""
+                    + "}";
+
+            mockMvc.perform(MockMvcRequestBuilders
+                            .post("/auth/customer/signUp")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(jsonRequestBody))
+                    .andExpect(MockMvcResultMatchers.status().isOk())
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.code").value("100000"))
+                    .andDo(MockMvcResultHandlers.print())
+                    .andReturn();
+        }
+    }
+
+    @Test
     void signUp() throws Exception{
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"test1User\"," //please each test add 1 to the username
+                + "\"customerUsername\":\"testUserRegister\"," //please each test add 1 to the username
                 + "\"customerPassword\":\"testPass\","
-                + "\"customerEmail\":\"1test@example.com\","//please each test add 1 to the email
+                + "\"customerEmail\":\"testRegister@example.com\","//please each test add 1 to the email
                 + "\"customerAddress\":\"testAddress\","
                 + "\"customerPhone\":\"1234567890\","
                 + "\"customerFirstname\":\"testFirst\","
