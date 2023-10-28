@@ -72,7 +72,7 @@ public class ManageTest {
         JSONObject tokenObject = dataObject.getJSONObject("satoken");
         String tokenValue = tokenObject.getString("tokenValue");
         String jsonRequestBody = "{"
-                + "\"customerId\":\"1714643790685597697 \","
+                + "\"customerId\":\"1717832146707619842 \","
                 + "\"customerStatus\":\"active\""
                 + "}";
 

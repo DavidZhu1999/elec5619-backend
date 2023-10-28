@@ -85,9 +85,9 @@ class CustomerServiceImplTest {
     @Test
     public void signUp_UsernameAlreadyExists_ReturnsCustomError() throws Exception {
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"testUser\","
-                + "\"customerPassword\":\"testPass\","
-                + "\"customerEmail\":\"test@example.com\","
+                + "\"customerUsername\":\"test\","
+                + "\"customerPassword\":\"123456\","
+                + "\"customerEmail\":\"test@gmailasd.com\","
                 + "\"customerAddress\":\"testAddress\","
                 + "\"customerPhone\":\"1234567890\","
                 + "\"customerFirstname\":\"testFirst\","
@@ -110,7 +110,7 @@ class CustomerServiceImplTest {
         String jsonRequestBody = "{"
                 + "\"customerUsername\":\"testUser1234567890\","
                 + "\"customerPassword\":\"testPass\","
-                + "\"customerEmail\":\"test@example.com\","
+                + "\"customerEmail\":\"test@gmail.com\","
                 + "\"customerAddress\":\"testAddress\","
                 + "\"customerPhone\":\"1234567890\","
                 + "\"customerFirstname\":\"testFirst\","
@@ -149,7 +149,7 @@ class CustomerServiceImplTest {
     @Test
     void logIn_UsernamePasswordNotMatch_ReturnsCustomError() throws Exception{
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"testUser\","
+                + "\"customerUsername\":\"zhehao\","
                 + "\"customerPassword\":\"testPass1\","
                 + "\"rememberMe\":false"
                 + "}";
@@ -167,7 +167,7 @@ class CustomerServiceImplTest {
     @Test
     void logIn_UsernameNotExisted_ReturnsCustomError() throws Exception{
         String jsonRequestBody = "{"
-                + "\"customerUsername\":\"testUser\","
+                + "\"customerUsername\":\"testUser321313121\","
                 + "\"customerPassword\":\"testPass\","
                 + "\"rememberMe\":false"
                 + "}";

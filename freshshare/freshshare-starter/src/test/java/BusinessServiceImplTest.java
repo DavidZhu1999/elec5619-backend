@@ -35,8 +35,8 @@ public class BusinessServiceImplTest {
     void signUp() throws Exception{
 
         String jsonRequestBody = "{"
-                + "\"businessUsername\":\"testUserRegister\","
-                + "\"businessEmail\":\"testRegister@example.com\","
+                + "\"businessUsername\":\"testUser\","
+                + "\"businessEmail\":\"testUser@example.com\","
                 + "\"businessPassword\":\"testPass\","
                 + "\"businessShopname\":\"testName\","
                 + "\"businessPhone\":\"0435815188\","
