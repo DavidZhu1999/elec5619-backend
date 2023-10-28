@@ -19,7 +19,7 @@ public class PShopController {
         private PShopService PShopService;
     @RequestMapping(value = "/openOrCloseShop", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseObj addSeller(@RequestBody ShopReq shopReq){
+    public ResponseObj openOrCloseShop(@RequestBody ShopReq shopReq){
         ResponseObj responseObj = new ResponseObj();
 
         ShopDto shopDto = new ShopDto();

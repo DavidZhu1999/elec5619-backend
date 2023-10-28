@@ -54,7 +54,7 @@ public class PProfileController {
     }
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseObj updatePassword(@RequestBody ChangePassword changePassword){
+    public ResponseObj updateShopName(@RequestBody ChangePassword changePassword){
         ResponseObj responseObj = new ResponseObj();
         //做一个改名字
 
